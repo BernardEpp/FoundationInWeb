@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>DOM Demo</title>
+        <link rel="stylesheet" href="css/site.css">
+    </head>
+    <body>
+        <main>
+            <h1>Welcome to the DOM Demo</h1>
+            <!-- <p id="first-paragraph">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Expedita est repellendus rerum excepturi quidem alias quisquam corrupti ab! 
+                Nesciunt impedit assumenda, 
+                eaque recusandae qui quos.
+            </p>
+            <p id="second-paragraph" class="support-paragraph">
+                Lorem ipsum dolor sit amet, 
+                consectetur adipisicing elit. 
+                Dolorem consectetur deserunt nulla labore debitis voluptatem.
+            </p>
+            <p id="third-paragraph" class="support-paragraph">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Itaque enim incidunt ea, consectetur sit deleniti aliquam at cum ab expedita.
+            </p> -->
+            <div id=list-section>
+                <a id="add-to-list" href="https://google.com">Add New Element To List</a>
+                <ul id="key-items">
+                    <li>Our First LI</li>
+                    <li>Our Second LI</li>
+                    <li>Our Third LI</li>
+                </ul>
+            </div>
+            <!-- <div>
+                <ul id="good-foods">
+
+                </ul>
+            </div> -->
+        </main>
+        <script>
+            'use strict'
+            // DOM, window, document
+            // const demo = document.getElementById('key-items');
+            // console.log(demo);
+
+            /* Selecting Elements */
+            // let p = document.querySelector('.support-paragraph');
+            // p = document.querySelector('#third-paragraph');
+            // p = document.querySelector('div ul li')
+            // console.log(p);
+
+            // let q = document.querySelectorAll('p');
+            // q.forEach(el => console.log(el));
+
+            // const p = document.getElementById('first-paragraph');
+            // p.innerText = 'This is a test';
+
+            // const list = document.querySelector('ul');
+            // list.innerHTML = '<li>test1</li><li>test2</li>';
+
+            // const p2 = document.querySelector('.support-paragraph');
+            // p2.remove();
+
+            // const headingItem = document.querySelector('h1');
+            // headingItem.style.color = 'red';
+            // headingItem.style.fontSize = '1.25rem';
+
+            /* Manipulating Elements */
+            // const p1 = document.querySelector('p');
+            // p1.classList.add('dark-mode');
+
+            // const paragraphs = document.querySelectorAll('p');
+            // // paragraphs.forEach(el => {
+            // //     el.classList.remove('support-paragraph');
+            // //     el.classList.add('dark-mode');
+            // // });
+            // paragraphs.forEach(el => {
+            //     if (el.classList.contains('support-paragraph')) {
+            //         el.classList.add('dark-mode');
+            //     }
+            // });
+
+
+            /* Traversing Elements */
+
+            // const section = document.getElementById('list-section');
+            // const list = section.querySelector('ul');
+            // const items = list.children;
+            // const itemsAray = Array.from(items);
+            // console.log(list);
+
+            // const section = document.getElementById('key-items');
+            // const parent = section.parentElement;
+            // const mainElement = section.closest('main');
+
+            // console.log(mainElement);
+
+            // let listItem = document.querySelector('li');
+            // // nextElementSibling, previousElementSibling 
+            // // const nextItem = listItem.nextElementSibling;
+            // // console.log(nextItem);
+            // // const finalItem = nextItem.nextElementSibling;
+            // // console.log(finalItem);
+            // // const unknownItem = finalItem.nextElementSibling;
+            // // console.log(unknownItem);
+
+            // while(listItem !== null) {
+            //     console.log(listItem);
+            //     listItem = listItem.nextElementSibling;
+            // }
+
+
+            /* Creating HTML */
+            // const list = document.getElementById('key-items');
+            // list.innerHTML += '<li>Our Fourth LI</li>';
+            // console.log(list);
+
+            // const foods = ['Hamburgers', 'Hot Dogs', 'Pasta', 'Bread'];
+            // const foodList = document.getElementById('good-foods');
+
+            // foods.forEach(food => {
+            //     // foodList.innerHTML += `<li>${food}</li>`;
+            //     const el = document.createElement('li');
+            //     el.innerText = food;
+            //     foodList.appendChild(el);
+            // });
+            
+            // const fragment = new DocumentFragment();
+            // foods.forEach(food => {
+            //     const el = document.createElement('li');
+            //     el.innerText = food;
+            //     fragment.appendChild(el);
+            // });
+            // foodList.appendChild(fragment);
+
+
+            /* Events */
+
+            // const mainElement = document.querySelector('main');
+            // const list = document.getElementById('key-items');
+            // const mainHeading = document.querySelector('h1');
+            // let i = 4;
+
+            // mainElement.addEventListener('click', addLi);
+            // mainHeading.addEventListener('click', addLiFromH1);
+
+            // function addLi (e) {
+            //     const fragment = document.createDocumentFragment();
+            //     const li = document.createElement('li');
+            //     li.innerText = `LI #${i}`;
+            //     i++;
+            //     // fragment.appendChild(li);
+            //     list.appendChild(li);
+            // };
+
+            // function addLiFromH1 (e) {
+            //     e.stopPropagation();
+            //     const fragment = document.createDocumentFragment();
+            //     const li = document.createElement('li');
+            //     li.innerText = `LI from H1 #${i}`;
+            //     i++;
+            //     // fragment.appendChild(li);
+            //     list.appendChild(li);
+            // };
+            
+            let i = 4;
+            const list = document.getElementById('key-items');
+            const addAction = document.getElementById('add-to-list');
+           
+            // addAction.addEventListener('click', (e) => {
+            //     e.preventDefault();
+            //     const li = document.createElement('li');
+            //     li.innerText = `LI from anchor tag #${i}`;
+            //     i++;
+            //     list.appendChild(li);
+            // })
+
+            addAction.addEventListener('click', addFromLink);
+
+            function addFromLink (e) {
+                e.preventDefault();
+                const li = document.createElement('li');
+                li.innerText = `LI from anchor tag #${i}`;
+                li.classList.add('new-item');
+                i++;
+                list.appendChild(li);
+                setTimeout(removeNewItemClass, 500);
+            }
+
+            function removeNewItemClass(){
+                const items = list.querySelectorAll('.new-item');
+                const itemsArray = Array.from(items);
+
+                itemsArray.forEach(el => el.classList.remove('new-item'));
+            }
+            
+            </script>
+        
+    </body>
+</html>

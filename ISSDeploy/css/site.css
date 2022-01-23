@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,400;1,700&family=Zen+Dots&display=swap');
+
+html{
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.5rem;
+    text-align: justify;
+
+}
+
+p {
+    text-indent:  2rem;
+    text-transform: capitalize;
+}
+
+/* body {
+    font-size: 18px;
+} */
+
+h1 {
+    font-size: 2rem;
+    font-family: 'Zen Dots', cursive;
+    text-transform: uppercase;
+}
+
+/* #first-character-style {
+    font-size: 50px;
+} */
+
+.starting-character {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.starting-character.first-overall-character {
+    color: #179217;
+}
+
+.sample-copy {
+    font-size: 1.25rem;
+}
+
+footer.sample-copy {
+    color: magenta;
+    font-style: italic;
+}
+
+.key-info {
+    /* text-decoration-line: underline;
+    text-decoration-color: rgb(228, 42, 197);
+    text-decoration-style: dashed;
+     */
+     text-decoration: underline rgb(228, 42, 197) dashed;
+}
+
+.ninja {
+    /* visibility: collapse;
+    display: none; */
+    display:inline-block;
+    border: 1px solid black;
+    width: 25%;
+    padding: 15px;
+    margin: 10px 0 10px 0;
+
+}
+

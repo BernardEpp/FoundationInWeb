@@ -1,0 +1,150 @@
+
+
+
+
+/* Print style sheets */
+
+/* #section1 {
+    background-color: lightblue;
+}
+
+header, footer {
+    background-color: darkblue;
+    color: white;
+    font-size: 3rem;
+    text-align: center;
+} */
+
+/* @media print {
+    *,
+    *::before,
+    *::after {
+        background: #fff !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    html {
+        font-size: 16px;
+    }
+
+    header, footer {
+        font-size: .5in;
+    }
+
+    @page {
+        margin: .5in;
+        size: a4 portrait;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    a[href]::after {
+        content: " (" attr(href) ")";
+    }
+
+    body > *:not(main) {
+        display: none;
+    }
+
+    header, footer {
+        display: none;
+    }
+
+    h2 {
+        page-break-before: always;
+    }
+
+    ol {
+        page-break-inside: avoid;
+    }
+
+    p {
+        orphans: 2;
+        widows: 2;
+    }
+} */
+
+
+
+
+
+/* Pseudo-Elements */
+/*
+pseudo-elements - :: - describe part of an element
+pseudo-elements - : - define the state of an element
+*/
+/* 
+#first-list li:first-child {
+    font-size: 1.5rem;
+}
+
+li:last-child {
+    font-size: 1.5rem;
+}
+
+li:nth-child(2) {
+    color: red;
+}
+
+h2:nth-of-type(2) {
+    color: red;
+}
+
+#button1:hover {
+   background-color: rgb(116, 116, 116); 
+   color: white;
+   border: 1px solid black;
+   padding: 5px;
+}
+
+#section1:first-of-type::first-line {
+    color: blue;
+    font-weight: bold;
+}
+
+p::first-line {
+    color: blue;
+    font-weight: bold;
+}
+
+p::first-letter {
+    font-size: 2rem;
+} */
+
+
+
+
+/* Variables */
+/* :root {
+    --brand-grey: rgb(197, 197, 197);
+    --brand-dark-grey: rgb(88, 88, 88);
+    --brand-blue: rgb(64, 46, 228);
+    --brand-light: rgb(255, 255, 255);
+
+    --important-text: 1.5rem;
+}
+
+#section1 {
+    background-color: var(--brand-grey);
+}
+
+#section2 {
+    background-color: var(--brand-dark-grey);
+    color: var(--brand-light);
+    font-size: var(--important-text);
+}
+
+#section3 {
+    color: var(--brand-blue)
+}
+
+#button1 {
+    border: 0;
+    padding: 5px;
+    color: var(--brand-light);
+    background-color: var(--brand-dark-grey);
+} */
